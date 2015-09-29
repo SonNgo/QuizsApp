@@ -5,23 +5,24 @@
       <img src="/assets/imgs/jenny.jpg">
     </a>
     <div class="content">
-      <a class="header">Stevie Feliciano</a>
+      <a class="header">Nguyen Trong Luong</a>
       <div class="description">
-        <p>Jenny is a student studying Media Management at <a>the New School</a>.</p>
+        <p>I am Superman</a>.</p>
       </div>
     </div>
   </div>
 </div>
 
-
-<div class="ui form">
-  <div class="field  ">
+<form ng-submit="addPost(post); ">
+<div class="ui form" >
+  <div class="field">
     <label>Text</label>
-    <textarea style="height: 100px;"> </textarea>
+    <textarea  ng-model="post.description" style="height: 100px;"> </textarea>
   </div>
 </div>
 <br>
 
-<button class="ui right floated blue button">Post</button>
+<button class="ui right floated blue button" type="submit">Post</button>
+</form>
 
 </aside>

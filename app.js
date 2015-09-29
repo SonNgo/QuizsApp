@@ -9,10 +9,12 @@ angular.module('QuizApp', ['ui.router'])
 					url: '/',
 					views: {
 						'aside': {
-							templateUrl: 'components/Users/user_profile.html'
+							templateUrl: 'components/Users/user_profile.html',
+							controller: 'UserProfileCtrl'
 						},
 						'content': {
-							templateUrl: 'components/Quizs/quizs.html'
+							templateUrl: 'components/Quizs/quizs.html',
+							controller: 'QuizsCtrl'
 						}
 					}
 				})

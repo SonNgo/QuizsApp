@@ -1,7 +1,6 @@
 angular.module('QuizApp')
-	.controller('QuizsCtrl', [
-		'$scope',
-		function ($scope) {
-			$scope.sayHi = "hello";
-		}
-	])
+	.controller('QuizsCtrl',  ['$scope', 'PostService', function ($scope, PostService) {
+
+			$scope.posts = PostService.posts;
+
+}])
