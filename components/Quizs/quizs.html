@@ -1,25 +1,29 @@
-
-<div class="ui items"  ng-repeat="post in posts">
-  <div class="item ">
-    <div class="ui tiny image">
-      <img src="/assets/imgs/jenny.jpg">
-    </div>
-    <div class="middle aligned content">
-      <div class="header">
-          {{post.user}}
-      </div>
+<div class="ui cards three wide column">
+  <a class="card" ui-sref="home.quizs.questions({quizNumber: '1'})">
+    <div class="content">
+      <div class="header"> Quiz 1</div>
+      <div class="meta">10 Questions</div>
       <div class="description">
-        <pre>{{post.description}}</pre>
+    
       </div>
-       <div class="meta">
-        <span class=""> <i class="thumbs up icon"></i> {{post.likes}} likes</span>
-        <span class=""> <i class="comments icon"></i> {{post.comments}} comments </span>
-        <span class="ui right floated small button">
-          See>>
-        </span>
+    </div>
+  </a>
+  <div class="card">
+    <div class="content">
+      <div class="header"> Quiz 2</div>
+      <div class="meta">10 Questions</div>
+      <div class="description">
+     
       </div>
+    </div>
   </div>
-</div>
-
-
+  <div class="card">
+    <div class="content">
+      <div class="header">Quiz 3</div>
+      <div class="meta">10 Questions</div>
+      <div class="description">
+    
+      </div>
+    </div>
+  </div>
 </div>
