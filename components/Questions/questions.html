@@ -1,34 +1,56 @@
 <div class="question-container">
-<div class="ui cards one wide column">
-  <div class="card">
-    <div class="content">
-      <div class="header"> Question 1
+  <div class="ui cards one wide column " ng-repeat="question in questions">
 
-      <span class="point"> +5 </span>
+    <div class="card  ">
+      <div class="content">
+        <div class="header"> Question {{question.id}}
+
+          <span class="point"> +{{question.point}} </span>
+        </div>
+        
+        <div class="description">
+          {{question.description}}
+        </div>
       </div>
       
-      <div class="description">
-        Nhiet do soi cua nuoc la bao nhieu: 
-      </div>
+      
     </div>
-    
-    <div class="ui checkbox">
-      <input type="checkbox" name="example">
-      <label>Make my profile visible</label>
-    </div>
-    <div class="ui checkbox">
-      <input type="checkbox" name="example">
-      <label>Make my profile visible</label>
-    </div>
-    <div class="ui checkbox">
-      <input type="checkbox" name="example">
-      <label>Make my profile visible</label>
-    </div>
-    <div class="ui checkbox">
-      <input type="checkbox" name="example">
-      <label>Make my profile visible</label>
-    </div>
-  </div>
 
+
+    <div class="card"> 
+     <form name="answer-form" class="ui form" style="margin: 5% 0 5% 15%;">
+      <div class="grouped fields">
+        <label>Your answer?</label>
+        <div class="field">
+          <div class="ui radio checkbox">
+            <input type="radio" ng-model="question.userAnswer" value="{{question.answers[0].correct}}">
+            <label> {{question.answers[0].option}}</label>
+          </div>
+        </div>
+        <div class="field">
+          <div class="ui radio checkbox">
+            <input type="radio" ng-model="question.userAnswer" value="{{question.answers[1].correct}}">
+            <label>{{question.answers[1].option}}</label>
+          </div>
+        </div>
+        <div class="field">
+          <div class="ui radio checkbox">
+            <input type="radio" ng-model="question.userAnswer" value="{{question.answers[2].correct}}">
+            <label>{{question.answers[2].option}}</label>
+          </div>
+        </div>
+        <div class="field">
+          <div class="ui radio checkbox">
+            <input type="radio" ng-model="question.userAnswer" value="{{question.answers[3].correct}}">
+            <label>{{question.answers[3].option}}</label>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+  <div class="card" >
+    <button class="ui  blue tiny button"  ng-click="checkResult($index)">Check</button>
+  </div>
 </div>
+
 </div>

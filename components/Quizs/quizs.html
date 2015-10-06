@@ -1,29 +1,15 @@
+
 <div class="ui cards three wide column">
-  <a class="card" ui-sref="home.quizs.questions({quizNumber: '1'})">
+ <a ng-repeat="quiz in quizs" class="card" ui-sref="home.quizs.questions({quiz: {{quiz.id}}})" >
+
     <div class="content">
-      <div class="header"> Quiz 1</div>
-      <div class="meta">10 Questions</div>
+      <div class="header"> Quiz {{quiz.id}}</div>
+      <div class="meta">{{quiz.numberQuestion}} Questions</div>
       <div class="description">
     
       </div>
     </div>
   </a>
-  <div class="card">
-    <div class="content">
-      <div class="header"> Quiz 2</div>
-      <div class="meta">10 Questions</div>
-      <div class="description">
-     
-      </div>
-    </div>
-  </div>
-  <div class="card">
-    <div class="content">
-      <div class="header">Quiz 3</div>
-      <div class="meta">10 Questions</div>
-      <div class="description">
-    
-      </div>
-    </div>
-  </div>
+
+
 </div>

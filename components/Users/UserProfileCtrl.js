@@ -1,8 +1,7 @@
 angular.module('QuizApp')
-	.controller('UserProfileCtrl', ['$scope', 'PostService',  function ($scope, PostService){
+	.controller('UserProfileCtrl', ['$scope',  function ($scope){
 	
 			$scope.addPost = function  (post) {
-				PostService.addPost(post);
 				$scope.post = {};
 			}
 	}])

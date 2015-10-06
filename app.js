@@ -1,5 +1,5 @@
 
-angular.module('QuizApp', ['ui.router'])
+angular.module('QuizApp', ['ui.router', 'cgNotify'])
 	.config([
 		'$stateProvider',
 		'$urlRouterProvider',
@@ -22,16 +22,18 @@ angular.module('QuizApp', ['ui.router'])
 					url: '/:subjectName',
 					views: {
 						'content@' : {
-							templateUrl: 'components/Quizs/quizs.html'
+							templateUrl: 'components/Quizs/quizs.html',
+							controller: 'QuizsCtrl'
 						}
 					}
 				})
 
 				.state('home.quizs.questions', {
-					url: '/:quizNumber',
+					url: '/:quiz',
 					views: {
 						'content@': {
 							templateUrl: 'components/Questions/questions.html',
+							controller: 'QuestionsCtrl'
 							
 						}
 					}
