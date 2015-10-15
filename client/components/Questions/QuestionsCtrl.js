@@ -44,16 +44,16 @@ angular.module('QuizApp')
 			done: false,
 			answers: [{
 				option: "A. Einstein",
-				correct: '1'
+				correct: '3'
 			}, {
 				option: "B. Nobel",
-				correct: '0'
+				correct: '1'
 			}, {
 				option: "C. Newton",
 				correct: '2'
 			}, {
 				option: "D. Lượng",
-				correct: '3'
+				correct: '0'
 		}]
 	}];
 
@@ -62,7 +62,7 @@ angular.module('QuizApp')
 		$scope.checkResult = function  (index) {
 			$scope.questions[index].done = true;
 			if ($scope.questions[index].userAnswer === '0') 
-				 notify('CORRECT. +' + $scope.questions[index].point + ' point');
+				 notify('CORRECT. +' + $scope.questions[index].point + ' point', {position: 'left'});
 			else
 				notify('WRONG');
 		}
