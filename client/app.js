@@ -10,7 +10,12 @@ angular.module('QuizApp', ['ui.router', 'cgNotify'])
 					views: {
 						'aside': {
 							templateUrl: 'components/Users/user_profile.html',
-							controller: 'UserProfileCtrl'
+							controller: 'UserProfileCtrl',
+							resolve: {
+								user: function(UserService) {
+									return UserService.getUser();
+								}
+							}
 						},
 						'content': {
 							templateUrl: 'components/Subject/Sub.html',
