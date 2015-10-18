@@ -75,3 +75,9 @@ header {
   width: 60%;
   margin: 0 20% 0 10%;
 }
+
+.modal-config {
+  font-size: 50px;
+  background-color: blue;
+  color: white;
+}
