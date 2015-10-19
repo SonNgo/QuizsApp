@@ -81,3 +81,18 @@ header {
   background-color: blue;
   color: white;
 }
+
+
+
+  @media screen and (min-width: 320px){
+    .form-sign-up {
+      width: 100%;
+    }
+  }
+
+  @media screen and (min-width: 768px){
+    .form-sign-up {
+      width: 50%;
+    }
+  }
+
