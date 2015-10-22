@@ -5,13 +5,14 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <link href='https://fonts.googleapis.com/css?family=Lato:400,300,700' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" type="text/css" href="libs/bower_components/semantic/dist/semantic.min.css">
-    <link rel="stylesheet" href="libs/bower_components/angular-notify/dist/angular-notify.min.css">
+    <link rel="stylesheet" href="libs/bower_components/angular-ui-notification/dist/angular-ui-notification.min.css">
     <link rel="stylesheet" href="assets/css/style.css">
     <script src="libs/bower_components/angular/angular.min.js"></script>
     <script src="libs/angular-ui-router.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="libs/bower_components/semantic/dist/semantic.min.js"></script>
-    <script src="libs/bower_components/angular-notify/dist/angular-notify.min.js"> </script>
+
+    <script src="libs/bower_components/angular-ui-notification/dist/angular-ui-notification.min.js"> </script>
     <script src="app.js"></script>
   </head>
   <body  >
@@ -19,9 +20,9 @@
         <div ng-include="'components/Shared/header.html'"></div>
       </header>
 
-      <div class="ui grid container " style= "background-color: 87D37C;">
+      <div class="ui grid container " >
         <div class="row">
-            <div class="four wide column" ui-view="aside"> </div>
+            <div class="four wide column" ui-view="aside" > </div>
             <div class="twelve wide column" ui-view="content"> </div>
         </div>
       </div>

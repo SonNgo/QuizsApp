@@ -1,5 +1,5 @@
 angular.module('QuizApp')
-	.controller('QuestionsCtrl', ['$scope', 'notify', function ($scope, notify) {
+	.controller('QuestionsCtrl', ['$scope', 'Notification', function ($scope, Notification) {
 	
 		$scope.questions = [{
 			id: 1,
@@ -62,8 +62,8 @@ angular.module('QuizApp')
 		$scope.checkResult = function  (index) {
 			$scope.questions[index].done = true;
 			if ($scope.questions[index].userAnswer === '0') 
-				 notify('CORRECT. +' + $scope.questions[index].point + ' point', {position: 'left'});
+				 Notification.success('CORRECT. +' + $scope.questions[index].point + ' point');
 			else
-				notify('WRONG');
+				Notification.error('WRONG');
 		}
 	}])

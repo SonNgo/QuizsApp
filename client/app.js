@@ -1,5 +1,5 @@
 
-angular.module('QuizApp', ['ui.router', 'cgNotify'])
+angular.module('QuizApp', ['ui.router', 'ui-notification'])
 	.config([
 		'$stateProvider',
 		'$urlRouterProvider',
