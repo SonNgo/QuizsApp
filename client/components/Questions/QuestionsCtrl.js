@@ -58,12 +58,21 @@ angular.module('QuizApp')
 	}];
 
 		
+		$scope.indexQuestion = 0;
+		$scope.currentQuestion = function (index) {
+			if ($scope.indexQuestion != index) return false;
+			else return true;
+		}
 
 		$scope.checkResult = function  (index) {
+			
 			$scope.questions[index].done = true;
+
 			if ($scope.questions[index].userAnswer === '0') 
 				 Notification.success('CORRECT. +' + $scope.questions[index].point + ' point');
 			else
-				Notification.error('WRONG');
+				Notification.error('NOT CORRECT');
+
+			$scope.indexQuestion = index+1;
 		}
 	}])

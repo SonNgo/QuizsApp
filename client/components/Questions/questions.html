@@ -1,7 +1,8 @@
-<div class="question-container animated fadeInRight" >
-  <div class="ui cards one wide column  "  ng-repeat="question in questions" >
+<div  ng-repeat="question in questions">
+<div class="question-container animated fadeInRight " ng-if="currentQuestion($index)" >
+  <div class="ui cards one wide column  "  >
 
-    <div class="card  " style="background-color: ; border: 5px solid green; box-shadow: 12px 12px 5px #888888;">
+    <div class="card" style="background-color: ; border: 5px solid green; box-shadow: 12px 12px 5px #888888;">
       <div class="content">
         <div class="header"> Question {{question.id}}
 
@@ -46,7 +47,7 @@
     </form>
   </div>
   <div class="card" ng-show="!question.done" >
-    <button class="ui  blue tiny button"  ng-click="checkResult($index)">Check</button>
+    <button class="ui  blue tiny button"  ng-click="checkResult($index)">Next</button>
   </div>
 
 <br>
@@ -55,5 +56,5 @@
 </div>
 
 
-
+</div>
 </div>
