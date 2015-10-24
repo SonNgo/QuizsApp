@@ -1,11 +1,21 @@
 How to run:
 
-1. git clone git@github.com:SonNgo/QuizsApp.git
-2. cd QuizsApp
-3. cd server-api 
-4. bundle install 
-5. rails s (run server on localhost:3000)
-6. Ctrl + Shift + T (open new terminal)
-7. cd ../client
-8. python -m SimpleHTTPServer (run client on localhost:8000)
-9. open http://localhost:8000/
+Clone: git clone git@github.com:SonNgo/QuizsApp.git
+
+1. Run server (on port localhost:3000)
+	1.1 cd server-api
+	1.2 bundle install
+	1.3 open: config/database.yml (modify usename, password of your MySQL database)
+	1.4 rake db:migrate:reset
+	1.5 rake db:seed
+	1.6 rails s
+
+2. Run client (on port localhost:8000)
+	2.1 open new terminal (Ctrl + Shift + T)
+	2.2 cd client
+	2.3 python -m SimpleHTTServer
+	2.4 open http://localhost:8000/
+
+
+
+
