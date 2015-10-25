@@ -17,7 +17,7 @@
     <div class="ui label" style="width: 100px; background-color: blue; color: white;">
       Email:
     </div>
-    <input type="text" placeholder="..." >
+    <input type="text" placeholder="..." ng-model="user.email" >
     </div>
 
     <br>
@@ -26,7 +26,7 @@
     <div class="ui label" style="width: 100px; background-color: blue; color: white;">
       UserName:
     </div>
-    <input type="text" placeholder="..." >
+    <input type="text" placeholder="..." ng-model="user.name" >
     </div>
 
       <br>
@@ -35,7 +35,7 @@
     <div class="ui label" style="width: 100px; background-color: blue; color: white;">
       Password:
     </div>
-    <input type="password" placeholder="...">
+    <input type="password" placeholder="..." >
     </div>
       <br>
       <br>
@@ -43,11 +43,11 @@
     <div class="ui label" style="width: 100px; background-color: blue; color: white;">
       Confirm:
     </div>
-    <input type="password" placeholder="...">
+    <input type="password" placeholder="..." >
     </div>
       <br>
       <br>
-    <button class="ui teal button " style="float: right;">Submit</button>
+    <button class="ui teal button " style="float: right;" ng-click="formSubmit()">Submit</button>
     <br>
     <br>
     </form>

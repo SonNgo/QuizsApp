@@ -1,11 +1,10 @@
 module Authenticable
 
-  include ActionController::HttpAuthentication::Token::ControllerMethods
+  
 
   def current_user
-    authenticate_with_http_token do |token, options| 
-      @current_user = User.find_by(auth_token: token) 
-    end
+      @current_user = User.find_by(auth_token: params[:token]) 
+      
   end
 
   def authenticate_with_token!

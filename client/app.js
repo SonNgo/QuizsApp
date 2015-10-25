@@ -1,5 +1,6 @@
 
 angular.module('QuizApp', ['ui.router', 'ui-notification'])
+	.constant('api', 'http://localhost:3000/api/v1')
 	.config([
 		'$stateProvider',
 		'$urlRouterProvider',

@@ -1,5 +1,17 @@
 angular.module('QuizApp')
-	.controller('HeaderCtrl',  ['$scope', function ($scope) {
+	.controller('HeaderCtrl',  ['$scope', 'HeaderService', function ($scope, HeaderService) {
+
+		$scope.user = {};
+
+
+		$scope.formSubmit = function(){
+			HeaderService.sendData($scope.user)
+		}
+
+
+
+
+
 
 		$scope.signup = function(){
 			$('.ui.small.signup.modal')

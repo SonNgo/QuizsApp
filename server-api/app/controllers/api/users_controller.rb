@@ -1,5 +1,5 @@
 class Api::UsersController < ApplicationController
-  before_action :authenticate_with_token!, only: [:show, :update, :destroy]
+  #before_action :authenticate_with_token!, only: [:show, :update, :destroy]
   before_action :set_user, only: [:show, :update, :destroy]
   # GET /users
   # GET /users.json
@@ -49,10 +49,11 @@ class Api::UsersController < ApplicationController
   private
 
     def set_user
-      @user = @current_user
+      @user = User.find(params[:id])
     end
 
     def user_params
       params.require(:user).permit(:name, :email, :password, :description, :auth_token, :point)
     end
+      
 end
