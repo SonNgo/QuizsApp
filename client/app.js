@@ -13,8 +13,13 @@ angular.module('QuizApp', ['ui.router', 'ui-notification'])
 							templateUrl: 'components/Users/user_profile.html',
 							controller: 'UserProfileCtrl',
 							resolve: {
-								user: function(UserService) {
-									return UserService.getUser();
+								getUser: function(UserService) {
+									return UserService.getUser()
+														.then(function  (data) {
+															return {data: data, status: "ok"}
+														}, function (error) {
+															return {status: 'failed'}
+														});
 								}
 							}
 						},
@@ -48,4 +53,5 @@ angular.module('QuizApp', ['ui.router', 'ui-notification'])
 			$urlRouterProvider.otherwise('/');	
 		}
 	])
-	
+
+

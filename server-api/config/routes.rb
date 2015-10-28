@@ -4,8 +4,11 @@ Rails.application.routes.draw do
   namespace :api, defaults: {format: 'json'} do
     scope :v1 do 
       resources :users, except: [:new, :edit] 
-
       resources :subjects, except: [:new, :edit]
+
+      match '/auth/register',     to: 'auth#register',     via: 'post'
+      match '/auth/login',        to: 'auth#login',        via: 'post'
+      match '/auth/token_status', to: 'auth#token_status', via: 'get'
     end
   end
   # The priority is based upon order of creation: first created -> highest priority.

@@ -1,16 +1,16 @@
 <aside>
-<div class="ui items user_profile">
+<div class="ui items user_profile animated fadeInLeft" ng-show="{{currentUser != null}}">
   <div class="item" >
     <a class="ui tiny image">
       <img src="/assets/imgs/jenny.jpg">
     </a>
     <div class="content">
-      <a class="header">{{user.name}}</a>
+      <a class="header">{{currentUser.name}}</a>
       <div class="description">
-        <p>{{user.description}}</a></p>
+        <p>{{currentUser.description}}</p>
       </div>
       <div class="meta">
-        <span style="font-size: 24px; color: green;">{{user.point}} points </span>
+        <span style="font-size: 24px; color: green;">{{currentUser.point}} points </span>
       </div>
     </div>
   </div>

@@ -1,26 +1,14 @@
 angular.module('QuizApp')
-	.controller('HeaderCtrl',  ['$scope', 'HeaderService', function ($scope, HeaderService) {
+	.controller('HeaderCtrl',  ['$scope', function ($scope) {
 
-		$scope.user = {};
-
-
-		$scope.formSubmit = function(){
-			HeaderService.sendData($scope.user)
-		}
-
-
-
-
-
-
-		$scope.signup = function(){
+		$scope.signupButton = function(){
 			$('.ui.small.signup.modal')
         .modal('setting', 'transition', 'fade up')
   			.modal('show');	
 		}
 
 
-		$scope.login = function(){
+		$scope.loginButton = function(){
 			$('.ui.small.login.modal')
         .modal('setting', 'transition', 'fade up')
   			.modal('show');	
