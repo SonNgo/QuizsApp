@@ -12,7 +12,7 @@ angular.module('QuizApp')
 			var deferred = $q.defer();
 			$http.get(url, {
 				params: {
-					'token': 'a2b26c6b3d3affdb2d683039ec804b86'
+					'token': 'b586e6dc6f6924e7000c2d9a0f506f84'
 				}
 			})
 				.success(function  (data) {

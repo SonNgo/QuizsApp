@@ -1,12 +1,12 @@
 class Api::AuthController < ApplicationController
   require 'auth_token'
-
+  
 
   def register
     user = User.new(user_params)
     
     if user.save
-      debugger
+      
       token = AuthToken.issue_token({ user_id: user.id })
       
       render json: { user: user,
@@ -18,7 +18,7 @@ class Api::AuthController < ApplicationController
 
   def login
     user = User.find_by(email: params[:email].downcase)
-    debugger
+    
     if user && user.authenticate(params[:password])
       token = AuthToken.issue_token({ user_id: user.id })
       render json: { user: user,

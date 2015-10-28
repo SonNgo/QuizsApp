@@ -1,14 +1,16 @@
 angular.module('QuizApp')
-	.factory('LocalService', function() {
+	.factory('LocalService', function($window) {
+
 		return {
-			get: function(key) {
-				return localStorage.getItem(key);
+			get: function() {
+				return $window.localStorage['auth_token'];
 			},
-			set: function(key, val) {
-				return localStorage.setItem(key, val);
+			set: function(token) {
+				console.log("luong")
+				 $window.localStorage['auth_token'] = token;
 			},
-			unset: function(key) {
-				return localStorage.removeItem(key);
+			unset: function() {
+				 $window.localStorage.removeItem('auth_token');
 			}
 		};
 	});
