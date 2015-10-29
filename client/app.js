@@ -12,16 +12,6 @@ angular.module('QuizApp', ['ui.router', 'ui-notification'])
 						'aside': {
 							templateUrl: 'components/Users/user_profile.html',
 							controller: 'UserProfileCtrl',
-							resolve: {
-								getUser: function(UserService) {
-									return UserService.getUser()
-														.then(function  (data) {
-															return {data: data, status: "ok"}
-														}, function (error) {
-															return {status: 'failed'}
-														});
-								}
-							}
 						},
 						'content': {
 							templateUrl: 'components/Subject/Sub.html',

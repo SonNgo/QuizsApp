@@ -60,7 +60,7 @@ angular.module('QuizApp')
       responseError: function(response) {
         if (response.status === 401 || response.status === 403) {
           LocalService.unset();
-          $injector.get('$state').go('anon.login');
+         
         }
         return $q.reject(response);
       }
