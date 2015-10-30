@@ -10,7 +10,7 @@ class ApplicationController < ActionController::Base
 private 
 
   def authenticate
-    debugger
+
     begin
       token = request.headers['Authorization'].split(' ').last
       
