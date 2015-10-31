@@ -19,9 +19,13 @@ angular.module('QuizApp')
       login: function(credentials) {
         var login = $http.post(api + '/auth/login', credentials);
         login.success(function(result) {
+          console.log(result)
           LocalService.unset();
           LocalService.set(JSON.stringify(result));
         });
+        login.error(function  () {
+          console.log('failed');
+        })
         return login;
       },
       logout: function() {
@@ -47,7 +51,7 @@ angular.module('QuizApp')
       
       request: function(config) {
         var token;
-        //console.log(LocalService.get());
+      
         if (LocalService.get()) {
           token = angular.fromJson(LocalService.get()).token;
         }

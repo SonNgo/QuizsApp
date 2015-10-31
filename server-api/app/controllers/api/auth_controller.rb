@@ -1,6 +1,6 @@
 class Api::AuthController < ApplicationController
   require 'auth_token'
-  
+  skip_before_action :authenticate, only: [:register, :login]
 
   def register
     user = User.new(user_params)
