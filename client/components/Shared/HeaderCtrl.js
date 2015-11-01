@@ -1,5 +1,6 @@
 angular.module('QuizApp')
-	.controller('HeaderCtrl', ['$scope', 'CurrentUser', 'LocalService', '$state', function ($scope, CurrentUser, LocalService, $state) {
+	.controller('HeaderCtrl', ['$scope', 'CurrentUser', 'LocalService', '$state', 'Notification', 
+		function ($scope, CurrentUser, LocalService, $state, Notification) {
 		
 		$scope.currentUser = function() {
 			if(CurrentUser.user())	return true
@@ -22,6 +23,7 @@ angular.module('QuizApp')
 		$scope.logout = function() {
 			LocalService.unset();
 			$state.reload();
+			Notification.success("Ban da dang xuat thanh cong")
 		}
 
 	}])

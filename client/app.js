@@ -4,7 +4,8 @@ angular.module('QuizApp', ['ui.router', 'ui-notification'])
 	.config([
 		'$stateProvider',
 		'$urlRouterProvider',
-		function ($stateProvider, $urlRouterProvider) {
+		'NotificationProvider',
+		function ($stateProvider, $urlRouterProvider, NotificationProvider) {
 			$stateProvider
 				.state('home', {
 					url: '',
@@ -42,6 +43,10 @@ angular.module('QuizApp', ['ui.router', 'ui-notification'])
 				})
 
 			$urlRouterProvider.otherwise('/');	
+			 NotificationProvider.setOptions({
+			 	  positionX: 'center',
+          positionY: 'top'
+			 })
 		}
 	])
 
