@@ -14,13 +14,14 @@ angular.module('QuizApp', ['ui.router', 'ui-notification'])
 							controller: 'UserProfileCtrl',
 						},
 						'content': {
-							templateUrl: 'components/Subject/Sub.html',
+							templateUrl: 'components/Subjects/Sub.html',
+							controller: 'SubjectCtrl'
 						}
 					}
 				})
 
 				.state('home.quizs', {
-					url: '/:subjectName',
+					url: '/subjects/:subject',
 					views: {
 						'content@' : {
 							templateUrl: 'components/Quizs/quizs.html',
@@ -30,7 +31,7 @@ angular.module('QuizApp', ['ui.router', 'ui-notification'])
 				})
 
 				.state('home.quizs.questions', {
-					url: '/:quiz',
+					url: '/quizs/:quiz',
 					views: {
 						'content@': {
 							templateUrl: 'components/Questions/questions.html',

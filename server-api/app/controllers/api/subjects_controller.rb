@@ -21,7 +21,7 @@ class Api::SubjectsController < ApplicationController
     @subject = Subject.new(subject_params)
 
     if @subject.save
-      render json: @subject, status: :created, location: @subject
+      render json: @subject, status: :created
     else
       render json: @subject.errors, status: :unprocessable_entity
     end
