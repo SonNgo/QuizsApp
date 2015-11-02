@@ -8,7 +8,7 @@ angular.module('QuizApp', ['ui.router', 'ui-notification'])
 		function ($stateProvider, $urlRouterProvider, NotificationProvider) {
 			$stateProvider
 				.state('home', {
-					url: '',
+					url: '/',
 					views: {
 						'aside': {
 							templateUrl: 'components/Users/user_profile.html',
@@ -22,7 +22,7 @@ angular.module('QuizApp', ['ui.router', 'ui-notification'])
 				})
 
 				.state('home.quizs', {
-					url: '/subjects/:subject',
+					url: 'subjects/:subject',
 					views: {
 						'content@' : {
 							templateUrl: 'components/Quizs/quizs.html',

@@ -23,7 +23,7 @@ angular.module('QuizApp')
 		$scope.logout = function() {
 			LocalService.unset();
 			$state.reload();
-			Notification.success("Ban da dang xuat thanh cong")
+			Notification.success("Log out successfully")
 		}
 
 	}])

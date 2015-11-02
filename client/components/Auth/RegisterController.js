@@ -4,7 +4,7 @@ angular.module('QuizApp')
 			Auth.register($scope.user)
 				.then(function(){
 					$state.reload();
-					Notification.success("Ban da dang ky thanh cong");
+					Notification.success("Register successfullly");
 				});
 
 			$('.ui.small.signup.modal')

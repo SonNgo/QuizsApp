@@ -4,7 +4,7 @@ angular.module('QuizApp')
 			Auth.login($scope.user)
 				.then(function(){
 					$state.reload()
-					Notification.success("Ban da dang nhap thanh cong ")
+					Notification.success("Login successfully")
 				});
 
 
