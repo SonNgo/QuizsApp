@@ -1,16 +1,6 @@
 angular.module('QuizApp')
   .factory('Auth', function($http, LocalService, api) {
-    function checkTokenStatus(token) {
-      $http.get('/auth/token_status?token=' + token);
-    }
-
-    var token = LocalService.get();
-
-    if (token) {
-      token = angular.fromJson(LocalService.get()).token;
-      checkTokenStatus(token);
-    }
-
+ 
     return {
 
       isAuthenticated: function() {

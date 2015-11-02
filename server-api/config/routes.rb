@@ -4,7 +4,9 @@ Rails.application.routes.draw do
   namespace :api, defaults: {format: 'json'} do
     scope :v1 do 
       resources :users, except: [:new, :edit] 
-      resources :subjects, except: [:new, :edit]
+      resources :subjects, except: [:new, :edit] do
+        resources :quizzes, except: [:new, :edit]
+      end
 
       match '/auth/register',     to: 'auth#register',     via: 'post'
       match '/auth/login',        to: 'auth#login',        via: 'post'
