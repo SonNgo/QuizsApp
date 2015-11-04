@@ -64,9 +64,9 @@ ActiveRecord::Schema.define(version: 20151102013447) do
     t.string   "email",           limit: 255
     t.string   "password",        limit: 255
     t.string   "description",     limit: 255
-    t.integer  "point",           limit: 4
-    t.datetime "created_at",                  null: false
-    t.datetime "updated_at",                  null: false
+    t.integer  "point",           limit: 4,   default: 0
+    t.datetime "created_at",                              null: false
+    t.datetime "updated_at",                              null: false
     t.string   "password_digest", limit: 255
     t.boolean  "admin",           limit: 1
   end

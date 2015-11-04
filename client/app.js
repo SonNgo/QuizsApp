@@ -22,7 +22,7 @@ angular.module('QuizApp', ['ui.router', 'ui-notification'])
 				})
 
 				.state('home.quizs', {
-					url: 'subjects/:subject',
+					url: '/subjects/:subject',
 					views: {
 						'content@' : {
 							templateUrl: 'components/Quizs/quizs.html',

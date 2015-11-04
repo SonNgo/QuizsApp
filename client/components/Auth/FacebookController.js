@@ -14,6 +14,8 @@ angular.module('QuizApp')
 							$state.reload();
 							Notification.success("Login successfully");
 						}, function() {
+								$scope.user.name = response.name
+
 								$scope.user.password_confirmation = response.id
 								Auth.register($scope.user)
 									.then(function(){

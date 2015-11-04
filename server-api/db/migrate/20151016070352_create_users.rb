@@ -5,7 +5,7 @@ class CreateUsers < ActiveRecord::Migration
       t.string :email
       t.string :password
       t.string :description
-      t.integer :point
+      t.integer :point, default: 0
 
       t.timestamps null: false
     end
