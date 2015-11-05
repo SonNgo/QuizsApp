@@ -1,4 +1,4 @@
-ActiveAdmin.register Subject do
+ActiveAdmin.register Quiz do
 
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
@@ -13,5 +13,5 @@ ActiveAdmin.register Subject do
 #   permitted
 # end
 
- permit_params :title
+  permit_params :subject_id, :name, :number_of_question
 end

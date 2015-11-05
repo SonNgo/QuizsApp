@@ -10,7 +10,7 @@ class Api::QuizzesController < ApplicationController
 
 private 
   def current_subject
-    debugger
+    
     @current_subject = Subject.find(params[:subject_id])
 
   end

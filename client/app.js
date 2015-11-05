@@ -21,18 +21,18 @@ angular.module('QuizApp', ['ui.router', 'ui-notification'])
 					}
 				})
 
-				.state('home.quizs', {
+				.state('home.quizzes', {
 					url: '/subjects/:subject',
 					views: {
 						'content@' : {
-							templateUrl: 'components/Quizs/quizs.html',
-							controller: 'QuizsCtrl'
+							templateUrl: 'components/Quizzes/quizzes.html',
+							controller: 'QuizzesCtrl'
 						}
 					}
 				})
 
-				.state('home.quizs.questions', {
-					url: '/quizs/:quiz',
+				.state('home.quizzes.questions', {
+					url: '/quizzes/:quiz',
 					views: {
 						'content@': {
 							templateUrl: 'components/Questions/questions.html',

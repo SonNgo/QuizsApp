@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151102013447) do
+ActiveRecord::Schema.define(version: 20151105133401) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string   "namespace",     limit: 255
@@ -47,11 +47,14 @@ ActiveRecord::Schema.define(version: 20151102013447) do
   add_index "admin_users", ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true, using: :btree
 
   create_table "quizzes", force: :cascade do |t|
-    t.string   "name",            limit: 255
-    t.integer  "question_number", limit: 4
-    t.datetime "created_at",                  null: false
-    t.datetime "updated_at",                  null: false
+    t.string   "name",               limit: 255
+    t.integer  "number_of_question", limit: 4
+    t.datetime "created_at",                     null: false
+    t.datetime "updated_at",                     null: false
+    t.integer  "subject_id",         limit: 4
   end
+
+  add_index "quizzes", ["subject_id"], name: "index_quizzes_on_subject_id", using: :btree
 
   create_table "subjects", force: :cascade do |t|
     t.string   "title",      limit: 255
@@ -73,4 +76,5 @@ ActiveRecord::Schema.define(version: 20151102013447) do
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
 
+  add_foreign_key "quizzes", "subjects"
 end
