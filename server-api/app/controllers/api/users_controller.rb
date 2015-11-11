@@ -1,5 +1,5 @@
 class Api::UsersController < ApplicationController
-  before_action :set_user, only: [:show, :update, :destroy]
+  before_action :set_user, only: [:show, :destroy]
   skip_before_action :authenticate, only: [:index, :show]
   # GET /users
   # GET /users.json
@@ -31,8 +31,8 @@ class Api::UsersController < ApplicationController
   # PATCH/PUT /users/1.json
   def update
     @user = User.find(params[:id])
-
-    if @user.update(user_params)
+    
+    if @user.update_attribute(:point, params[:point])
       head :no_content
     else
       render json: @user.errors, status: :unprocessable_entity

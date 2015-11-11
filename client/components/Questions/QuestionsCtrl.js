@@ -76,11 +76,15 @@ angular.module('QuizApp')
 			Notification.error('NOT CORRECT');
 		}
 
+		if(index == $scope.questions.length - 1) {
+			sharedData.set('isFinished', true);
+		}
+
 		$scope.indexQuestion = index+1;
 	}
 
 	function updateUserPoint(point) {
-		sharedData.set(point);
+		sharedData.set('point', point);
 	}
 
 }])
