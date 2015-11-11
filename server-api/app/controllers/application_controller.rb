@@ -23,8 +23,6 @@ private
     end
   end
 
-
-
   def default_serializer_options
     { root: false }
   end

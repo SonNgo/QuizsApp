@@ -52,7 +52,7 @@ angular.module('QuizApp', ['ui.router', 'ui-notification'])
 
   window.fbAsyncInit = function() {
     FB.init({
-      appId      : '907948839295498',
+      appId      : '848349415286409',
       xfbml      : true,
       version    : 'v2.5'
     });

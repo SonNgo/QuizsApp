@@ -1,7 +1,5 @@
 angular.module('QuizApp')
-.controller('QuestionsCtrl', ['$scope', 'Notification', function ($scope, Notification) {
-
-	$scope.userPoint = 0;
+.controller('QuestionsCtrl', ['$scope', 'Notification', 'sharedData', function ($scope, Notification, sharedData) {
 
 	$scope.questions = [{
 		id: 1,
@@ -66,18 +64,27 @@ angular.module('QuizApp')
 		else return true;
 	}
 
+	var userPoint = 0;
+
 	$scope.checkResult = function  (index) {
 
 		$scope.questions[index].done = true;
 
 		if ($scope.questions[index].userAnswer === '0') {
 			var point = $scope.questions[index].point;
-			$scope.userPoint += point;
+			userPoint += point;
 			Notification.success('CORRECT. +' + point + ' point');
 		} else {
 			Notification.error('NOT CORRECT');
 		}
 
+		updateUserPoint();
+
 		$scope.indexQuestion = index+1;
 	}
+
+	function updateUserPoint() {
+		sharedData.set(userPoint);
+	}
+
 }])
