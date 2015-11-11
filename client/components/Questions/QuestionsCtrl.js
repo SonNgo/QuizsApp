@@ -64,27 +64,23 @@ angular.module('QuizApp')
 		else return true;
 	}
 
-	var userPoint = 0;
-
 	$scope.checkResult = function  (index) {
 
 		$scope.questions[index].done = true;
 
 		if ($scope.questions[index].userAnswer === '0') {
 			var point = $scope.questions[index].point;
-			userPoint += point;
+			updateUserPoint(point);
 			Notification.success('CORRECT. +' + point + ' point');
 		} else {
 			Notification.error('NOT CORRECT');
 		}
 
-		updateUserPoint();
-
 		$scope.indexQuestion = index+1;
 	}
 
-	function updateUserPoint() {
-		sharedData.set(userPoint);
+	function updateUserPoint(point) {
+		sharedData.set(point);
 	}
 
 }])
