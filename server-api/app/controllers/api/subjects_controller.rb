@@ -1,6 +1,6 @@
 class Api::SubjectsController < ApplicationController
   before_action :set_subject, only: [:show, :update, :destroy]
-
+  skip_before_filter :authenticate
   # GET /subjects
   # GET /subjects.json
   def index

@@ -9,7 +9,7 @@ angular.module('QuizApp')
 
 	sharedService.set = function(key, value) {
 		this.data[key] = value;
-		$rootScope.$broadcast('handleBroadcast');
+		$rootScope.$broadcast(key+'Broadcast');
 	}
 
 	return sharedService;
@@ -19,6 +19,12 @@ angular.module('QuizApp')
 	return {
 		update: function(path, object) {
 			return $http.put(api + path + '/' + object.id, object);
+		},
+		get: function(path, object) {
+			if(object) {
+				return $http.get(api + path + '/' + object.id);
+			}
+			return $http.get(api + path);
 		}
 	}
 })

@@ -28,7 +28,6 @@ angular.module('QuizApp')
         var register = $http.post(api + '/auth/register', formData);
         register.success(function(result) {
           LocalService.set(JSON.stringify(result));
-
         });
         return register;
       }

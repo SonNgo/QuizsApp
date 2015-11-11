@@ -6,6 +6,9 @@ angular.module('QuizApp')
 				return angular.fromJson(LocalService.get()).user; 
 			}
 			return null;
+		},
+		getToken: function() {
+			return angular.fromJson(LocalService.get()).token;
 		}
 	};
 });

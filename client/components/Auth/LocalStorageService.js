@@ -10,6 +10,9 @@ angular.module('QuizApp')
 		},
 		unset: function() {
 			$window.localStorage.removeItem('auth_token');
+		},
+		clear: function() {
+			$window.localStorage.clear();
 		}
 	};
 });

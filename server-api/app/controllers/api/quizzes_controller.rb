@@ -1,5 +1,6 @@
 class Api::QuizzesController < ApplicationController
   before_action :current_subject
+  skip_before_filter :authenticate
 
   def index
     @quizzes = @current_subject.quizzes
