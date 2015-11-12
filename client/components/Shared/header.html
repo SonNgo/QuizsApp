@@ -3,12 +3,17 @@
   <div class="btn-header" style="float: right;">
 
   <div class="ui buttons " ng-if="!currentUser()">
-    <button class="ui blue button" ng-click="signupButton()" style="margin-right: 5px;" >Register</button>
-    <button class="ui blue button" ng-click="loginButton()"  style="margin-right: 5px;">Login</button>
-
+<!--     <button class="ui blue button"  style="margin-right: 5px;" >Register</button>
+<button class="ui blue button"   style="margin-right: 5px;">Login</button> -->
+    
+    <div class="ui buttons">
+    <button class="ui button red" ng-click="signupButton()">Sign up</button>
+      <div class="or"></div>
+      <button class="ui positive button" ng-click="loginButton()">Log in</button>
+    </div>
 
       <div class="ui small signup modal" ng-controller="RegisterCtrl">
-        <div class="header">Sign up</div>
+        <div class="header" style="text-align: center; color: teal;"><h1>Sign-up</h1></div>
         <div class="content">
 
           <form class = "form-sign-up">
@@ -28,7 +33,6 @@
               </div>
               <input type="text" placeholder="..." ng-model="user.name" >
             </div>
-
 
             <br>
             <br>
@@ -50,20 +54,16 @@
             <br>
             <br>
 
-            <button class="ui teal button " style="float: right;" ng-click="register()">Submit</button>
+            <button class="ui red button " style="width: 100%;" ng-click="register()">SIGN UP</button>
             <br>
             <br>
           </form>
 
-
         </div>  
       </div>
 
-
-
-
       <div class="ui small login modal" ng-controller="LoginCtrl">
-       <div class="header">Login</div>
+       <div class="header" style="text-align: center;color: teal;"><h1>Log-in</h1></div>
        <div class="content">
 
         <form class = "form-sign-up">
@@ -85,14 +85,18 @@
           <br>
           <br>
 
-          <button class="ui teal button " style="float: right;" ng-click="login()">Submit</button>
+          <button class="ui green button " style="width: 100%;" ng-click="login()">LOG IN</button>
           <br>
           <br>
           <br>
           <br>
-          <div ng-controller="FacebookCtrl">
-             <button class="ui blue button" ng-click="fbLogin()" style="width: 100%;" >Facebook</button>
-          </div>
+<!--           <div ng-controller="FacebookCtrl">
+   <button class="ui blue button" ng-click="fbLogin()" style="width: 100%;" >Facebook</button>
+</div> -->
+          <button class="ui facebook button" ng-controller="FacebookCtrl" ng-click="fbLogin()">
+            <i class="facebook icon"></i>
+            Facebook
+          </button>
         </form>
 
 
@@ -101,7 +105,7 @@
     </div>
   </div>
   <div ng-if="currentUser()">
-    <button class="ui button blue" ng-click="logout()">Logout</button>
+    <button class="ui button orange" ng-click="logout()">Logout</button>
   </div>
 </div>
 </div>
