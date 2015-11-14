@@ -15,34 +15,17 @@
       </div>
       
       
-    
+
      <form name="answer-form" class="ui form" style="margin: 5% 0 5% 15%;">
       <div class="grouped fields">
         <label>Your answer?</label>
-        <div class="field">
+        <div class="field" ng-repeat="answer in question.answers">
           <div class="ui radio checkbox">
-            <input type="radio" ng-model="question.userAnswer" value="{{question.answers[0].correct}}">
-            <label> {{question.answers[0].option}}</label>
+            <input type="radio" ng-click="checked($index)">
+            <label> {{answer.content}}</label>
           </div>
         </div>
-        <div class="field">
-          <div class="ui radio checkbox">
-            <input type="radio" ng-model="question.userAnswer" value="{{question.answers[1].correct}}">
-            <label>{{question.answers[1].option}}</label>
-          </div>
-        </div>
-        <div class="field">
-          <div class="ui radio checkbox">
-            <input type="radio" ng-model="question.userAnswer" value="{{question.answers[2].correct}}">
-            <label>{{question.answers[2].option}}</label>
-          </div>
-        </div>
-        <div class="field">
-          <div class="ui radio checkbox">
-            <input type="radio" ng-model="question.userAnswer" value="{{question.answers[3].correct}}">
-            <label>{{question.answers[3].option}}</label>
-          </div>
-        </div>
+
       </div>
     </form>
   </div>

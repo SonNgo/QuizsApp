@@ -7,7 +7,7 @@
 <button class="ui blue button"   style="margin-right: 5px;">Login</button> -->
     
     <div class="ui buttons">
-    <button class="ui button red" ng-click="signupButton()">Sign up</button>
+    <button class="ui positive button" ng-click="signupButton()">Sign up</button>
       <div class="or"></div>
       <button class="ui positive button" ng-click="loginButton()">Log in</button>
     </div>
@@ -18,7 +18,7 @@
 
           <form class = "form-sign-up">
             <div class="ui labeled input" style="width: 100%; ">
-              <div class="ui label" style="width: 100px; background-color: blue; color: white;">
+              <div class="ui label" style="width: 120px; background-color: blue; color: white;">
                 Email:
               </div>
               <input type="text" placeholder="..." ng-model="user.email" >
@@ -28,7 +28,7 @@
             <br>
 
             <div class="ui labeled input" style="width: 100%; ">
-              <div class="ui label" style="width: 100px; background-color: blue; color: white;">
+              <div class="ui label" style="width: 120px; background-color: blue; color: white;">
                 Name:
               </div>
               <input type="text" placeholder="..." ng-model="user.name" >
@@ -37,7 +37,7 @@
             <br>
             <br>
             <div class="ui labeled input" style="width: 100%; ">
-              <div class="ui label" style="width: 100px; background-color: blue; color: white;">
+              <div class="ui label" style="width: 120px; background-color: blue; color: white;">
                 Password:
               </div>
               <input type="password" placeholder="..." ng-model="user.password" >
@@ -46,7 +46,7 @@
             <br>
             <br>
             <div class="ui labeled input" style="width: 100%;">
-              <div class="ui label" style="width: 100px; background-color: blue; color: white;">
+              <div class="ui label" style="width: 120px; background-color: blue; color: white;">
                 Confirmation:
               </div>
               <input type="password" placeholder="..." ng-model="user.password_confirmation">
@@ -54,7 +54,7 @@
             <br>
             <br>
 
-            <button class="ui red button " style="width: 100%;" ng-click="register()">SIGN UP</button>
+            <button class="ui positive button " style="width: 100%;" ng-click="register()">SIGN UP</button>
             <br>
             <br>
           </form>
@@ -68,7 +68,7 @@
 
         <form class = "form-sign-up">
           <div class="ui labeled input" style="width: 100%; ">
-            <div class="ui label" style="width: 100px; background-color: blue; color: white;">
+            <div class="ui label" style="width: 120px; background-color: blue; color: white;">
               Email:
             </div>
             <input type="text" placeholder="..." ng-model="user.email">
@@ -77,7 +77,7 @@
           <br>
           <br>
           <div class="ui labeled input" style="width: 100%;">
-            <div class="ui label" style="width: 100px; background-color: blue; color: white;">
+            <div class="ui label" style="width: 120px; background-color: blue; color: white;">
               Password:
             </div>
             <input type="password" placeholder="..." ng-model="user.password">
@@ -85,7 +85,7 @@
           <br>
           <br>
 
-          <button class="ui green button " style="width: 100%;" ng-click="login()">LOG IN</button>
+          <button class="ui positive button " style="width: 100%;" ng-click="login()">LOG IN</button>
           <br>
           <br>
           <br>
@@ -93,7 +93,7 @@
 <!--           <div ng-controller="FacebookCtrl">
    <button class="ui blue button" ng-click="fbLogin()" style="width: 100%;" >Facebook</button>
 </div> -->
-          <button class="ui facebook button" ng-controller="FacebookCtrl" ng-click="fbLogin()">
+          <button class="ui facebook button" ng-controller="FacebookCtrl" ng-click="fbLogin()" style="width: 100%;">
             <i class="facebook icon"></i>
             Facebook
           </button>

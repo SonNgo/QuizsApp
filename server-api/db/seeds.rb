@@ -11,4 +11,12 @@ science = Subject.create!(title: 'Science')
 math = Subject.create!(title: 'Math')
 physic.quizzes.create!(name: "Physic 1")
 science.quizzes.create!(name: "Science 1")
-math.quizzes.create!(name: "Math 1")
+math_quiz_1 = math.quizzes.create!(name: "Math 1")
+question_1 = math_quiz_1.questions.create!(name: "math_1_1", description: "Nhiet do soi cua nuoc", point: 10, category: 'mutilChoice')
+
+
+question_1.answers.create!(content: "50", is_correct: false)
+question_1.answers.create!(content: "100", is_correct: true)
+question_1.answers.create!(content: "200", is_correct: false)
+question_1.answers.create!(content: "1000", is_correct: false)
+

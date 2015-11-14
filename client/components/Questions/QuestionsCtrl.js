@@ -1,61 +1,15 @@
 angular.module('QuizApp')
-.controller('QuestionsCtrl', ['$scope', 'Notification', 'sharedData', function ($scope, Notification, sharedData) {
+.controller('QuestionsCtrl', ['$scope', 'Notification', 'sharedData', 'QuestionsService', '$stateParams',
+	function ($scope, Notification, sharedData, QuestionsService, $stateParams) {
 
-	$scope.questions = [{
-		id: 1,
-		description: "Nhiệt độ sôi của nước là:",
-		point: 5,
-		done: false,
-		answers: [{
-			option: "A. 100",
-			correct: '0'
-		}, {
-			option: "B. 50",
-			correct: '1'
-		}, {
-			option: "C. 10",
-			correct: '2'
-		}, {
-			option: "D. 200",
-			correct: '3'
-		}, ]
-	}, {
-		id: 2,
-		description: "Nhà bác học Newton bị quả gì rơi trúng đầu để rồi phát minh ra định luật vạn vật hấp dẫn: ",
-		point: 5,
-		done: false,
-		answers: [{
-			option: "A. Lựu",
-			correct: '1'
-		}, {
-			option: "B. Bưỏi",
-			correct: '2'
-		}, {
-			option: "C. Táo",
-			correct: '0'
-		}, {
-			option: "D. Mít",
-			correct: '3'
-		}]
-	}, {
-		id: 3,
-		description: "Ai là người phát minh ra thuyết tưong đối:",
-		point: 10,
-		done: false,
-		answers: [{
-			option: "A. Einstein",
-			correct: '3'
-		}, {
-			option: "B. Nobel",
-			correct: '1'
-		}, {
-			option: "C. Newton",
-			correct: '2'
-		}, {
-			option: "D. Lượng",
-			correct: '0'
-		}]
-	}];
+	
+
+
+	QuestionsService.getByQuiz($stateParams.subject, $stateParams.quiz)
+		.then ( function  (result) {
+			$scope.questions = result.data;
+
+		})
 
 
 	$scope.indexQuestion = 0;
@@ -64,11 +18,15 @@ angular.module('QuizApp')
 		else return true;
 	}
 
+	$scope.checked = function (index) {
+		$scope.answer = index;
+	}
+
 	$scope.checkResult = function  (index) {
 
 		$scope.questions[index].done = true;
-
-		if ($scope.questions[index].userAnswer === '0') {
+		if (($scope.answer != null) && ($scope.questions[index].answers[$scope.answer].is_correct)) {
+			console.log(index + ' ' + $scope.answer);
 			var point = $scope.questions[index].point;
 			updateUserPoint(point);
 			Notification.success('CORRECT. +' + point + ' point');

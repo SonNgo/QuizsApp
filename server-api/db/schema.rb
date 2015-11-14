@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151105133401) do
+ActiveRecord::Schema.define(version: 20151114064340) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string   "namespace",     limit: 255
@@ -46,6 +46,28 @@ ActiveRecord::Schema.define(version: 20151105133401) do
   add_index "admin_users", ["email"], name: "index_admin_users_on_email", unique: true, using: :btree
   add_index "admin_users", ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true, using: :btree
 
+  create_table "answers", force: :cascade do |t|
+    t.string   "content",     limit: 255
+    t.boolean  "is_correct",  limit: 1
+    t.integer  "question_id", limit: 4
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
+  end
+
+  add_index "answers", ["question_id"], name: "index_answers_on_question_id", using: :btree
+
+  create_table "questions", force: :cascade do |t|
+    t.string   "name",        limit: 255
+    t.text     "description", limit: 65535
+    t.string   "category",    limit: 255
+    t.integer  "point",       limit: 4
+    t.integer  "quiz_id",     limit: 4
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
+  end
+
+  add_index "questions", ["quiz_id"], name: "index_questions_on_quiz_id", using: :btree
+
   create_table "quizzes", force: :cascade do |t|
     t.string   "name",               limit: 255
     t.integer  "number_of_question", limit: 4
@@ -76,5 +98,7 @@ ActiveRecord::Schema.define(version: 20151105133401) do
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
 
+  add_foreign_key "answers", "questions"
+  add_foreign_key "questions", "quizzes"
   add_foreign_key "quizzes", "subjects"
 end

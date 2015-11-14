@@ -5,7 +5,9 @@ Rails.application.routes.draw do
     scope :v1 do 
       resources :users, except: [:new, :edit] 
       resources :subjects, except: [:new, :edit] do
-        resources :quizzes, except: [:new, :edit]
+        resources :quizzes, except: [:new, :edit] do
+          resources :questions, except: [:new, :edit] 
+        end
       end
 
       match '/auth/register',     to: 'auth#register',     via: 'post'
