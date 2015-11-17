@@ -13,8 +13,14 @@ angular.module('QuizApp', ['ui.router', 'ui-notification'])
 						'aside': {
 							templateUrl: 'components/Users/user_profile.html',
 							controller: 'UserProfileCtrl',
-						},
-						'content': {
+						}
+					}
+				})
+
+				.state('home.subjects', {
+					url: 'subjects',
+					views: {
+						'content@': {
 							templateUrl: 'components/Subjects/Sub.html',
 							controller: 'SubjectCtrl'
 						}
@@ -42,11 +48,21 @@ angular.module('QuizApp', ['ui.router', 'ui-notification'])
 					}
 				})
 
-			$urlRouterProvider.otherwise('/');	
-			 NotificationProvider.setOptions({
-			 	  positionX: 'center',
-          positionY: 'top'
-			 })
+				.state('home.leaderBoard', {
+					url: 'leaderBoard',
+					views: {
+						'content@': {
+							templateUrl: 'components/LeaderBoard/_leaderBoard.html',
+							controller: 'leaderBoardCtrl'
+						}
+					}
+				})
+
+			$urlRouterProvider.otherwise('/subjects');	
+			NotificationProvider.setOptions({
+				positionX: 'center',
+          		positionY: 'top'
+			})
 		}
 	])
 

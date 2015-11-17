@@ -1,9 +1,6 @@
 angular.module('QuizApp')
-.controller('QuestionsCtrl', ['$scope', 'Notification', 'sharedData', 'QuestionsService', '$stateParams',
-	function ($scope, Notification, sharedData, QuestionsService, $stateParams) {
-
-	
-
+.controller('QuestionsCtrl', ['$scope', '$state', 'Notification', 'sharedData', 'QuestionsService', '$stateParams',
+	function ($scope, $state, Notification, sharedData, QuestionsService, $stateParams) {
 
 	QuestionsService.getByQuiz($stateParams.subject, $stateParams.quiz)
 		.then ( function  (result) {
@@ -20,9 +17,6 @@ angular.module('QuizApp')
 		}
 	}
 
-	
-
-
 	$scope.indexQuestion = 0;
 	$scope.totalPoint = 0;
 	
@@ -35,9 +29,6 @@ angular.module('QuizApp')
 	function updateUserPoint(point) {
 		sharedData.set('point', point);
 	}
-
-
-
 
 	$scope.checked = function (index) {
 		$scope.answer = index;
@@ -58,8 +49,9 @@ angular.module('QuizApp')
 		if(index == $scope.questions.length - 1) {
 			sharedData.set('isFinished', true);
 			$('.ui.small.result.modal')
-        .modal('setting', 'transition', 'fade up')
+        	.modal('setting', 'transition', 'fade up')
   			.modal('show');
+  			$state.go('home.leaderBoard');
 		}
 
 		$scope.indexQuestion = index+1;
@@ -81,8 +73,9 @@ angular.module('QuizApp')
 		if(index == $scope.questions.length - 1) {
 			sharedData.set('isFinished', true);
 			$('.ui.small.result.modal')
-        .modal('setting', 'transition', 'fade up')
+        	.modal('setting', 'transition', 'fade up')
   			.modal('show');
+  			$state.go('home.leaderBoard');
 		}
 
 		$scope.indexQuestion = index+1;

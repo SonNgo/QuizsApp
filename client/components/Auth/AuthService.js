@@ -1,10 +1,14 @@
 angular.module('QuizApp')
-  .factory('Auth', function($http, LocalService, api) {
+  .factory('Auth', function($http, LocalService, CurrentUser, api) {
  
     return {
 
       isAuthenticated: function() {
-        return LocalService.get();
+        var user = CurrentUser.user();
+        if(user){
+          return true;
+        }
+        return false;
       },
       login: function(credentials) {
         var login = $http.post(api + '/auth/login', credentials);

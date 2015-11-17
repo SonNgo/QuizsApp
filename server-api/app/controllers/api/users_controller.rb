@@ -1,11 +1,10 @@
 class Api::UsersController < ApplicationController
   # before_action :set_user, only: [:show, :destroy]
-  # skip_before_action :authenticate, only: [:index, :show]
+  skip_before_action :authenticate, only: [:index, :show]
   # GET /users
   # GET /users.json
   def index
-    @users = User.all
-
+    @users = User.all.order('point' + ' ' + 'desc');
     render json: @users
   end
 
