@@ -1,31 +1,89 @@
-How to run:
+#Week 3:
+*Sep 22, 2015*
 
-Clone: git clone git@github.com:SonNgo/QuizsApp.git
+Task for this week: 
+* setup evironment to code: all members
+* Learn rails: tungson, luong, soncao
+* Learn angularjs: luong, tungson
+* Learn bootstrap, html, css: Thang, Quan
 
-1. Run server (on port localhost:3000)
+#Week 4:
+*Sep 29, 2015*
 
-	1.1 cd server-api
+Task for this week: 
+* Learn rails: tungson, luong, soncao
+* Learn angularjs: luong, tungson
+* Learn bootstrap, html, css: Thang, Quan 
 
-	1.2 bundle install
+#Week 5:
+*Oct 6, 2015*
 
-	1.3 open: config/database.yml (modify usename, password of your MySQL database)
+Task for this week: 
+* static page
+  * layout
+  * register form
+  * login form
 
-	1.4 rake db:migrate:reset
+#Week 6:
+*Oct 14, 2015*
 
-	1.5 rake db:seed
+Task for this week: 
+* Style Css and html: Quan, Thang
 
-	1.6 rails s
+#Week 7:
+*Oct 21, 2015*
 
-2. Run client (on port localhost:8000)
+Task for this week: 
+* Use Gem administrate
+* Create data on server: SonCao
 
-	2.1 open new terminal (Ctrl + Shift + T)
+#Week 8
+*Oct 28, 2015*
 
-	2.2 cd ../client
+Task for this week: 
+* write rails-api for the web-app: tungson
+* database design: users, subjects, quizzes: luong
 
-	2.3 python -m SimpleHTTPServer
+#Week 9
+*Nov 6, 2015*
 
-	2.4 open http://localhost:8000/
+Task for this week: 
+* login and register feature: tungson, luong
+* write rails-api for the web-app: tungson, luong
+* database design: questions, answers: tungson
+
+#Week 10
+*Nov 14, 2015*
+
+Task for this week: 
+* Style css: Quan, Thang
+* login via facebook: tungson
+
+#Week 11:
+*Nov 18, 2015*
+
+Task not done:
+* login via facebook: tungson
+
+Task for this week: 
+* Style css: Quan, Thang
+* update scores for users after finishing: luong
+
+#Week 12:
+*Nov 27, 2015*
+
+Task for this week: 
+* insert data: SonCao
+* learder-board: luong
 
 
 
+
+
+
+ 
+
+
+
+ 
 
